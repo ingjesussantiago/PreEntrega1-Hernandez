@@ -14,6 +14,8 @@ const ItemListContainer = () => {
 //  }
  
 const [Product, setProduct] = useState([])
+
+
 useEffect(() => {
 
   fetch('https://fakestoreapi.com/products')
