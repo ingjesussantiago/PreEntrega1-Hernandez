@@ -1,15 +1,18 @@
 import React from 'react'
+// import "./styles.scss"
 
 const Item = ({Product}) => {
   return (
-    <div ClassName="card" style={{width: "18rem"}}>
-    <img src={Product.image} ClassName="card-img-top" alt={`id-${Product.id}`}/>
-    <div ClassName="card-body">
-      <h5 ClassName="card-title">{Product.title}</h5>
-      <p ClassName="card-text">{Product.price}</p>
-      <a href="/#" ClassName="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
+        <div Class="card" style={{width: "17rem"}}>
+            <img src={Product.image} Class="card-img-top" alt={`id-${Product.id}`} height="55%"/>
+            <div Class="card-body row justify-content-center">
+              <h5 Class="card-title text-center">{Product.title}</h5>
+              <p Class="card-text text-center">{Product.price}</p>
+              <a href="/#" Class="btn btn-primary ">Mas Información</a>
+            </div>
+              </div>     
+  
+  
   )
 }
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ItemList from '../../Components/itemList'
 import "./styles.scss"
 
@@ -15,36 +16,43 @@ const ItemListContainer = () => {
  
 const [Product, setProduct] = useState([])
 
+const {categoryId} = useParams()
+console.log(categoryId)
+
 
 useEffect(() => {
 
   fetch('https://fakestoreapi.com/products')
   .then(res=>{
-    console.log(res)
+    // console.log(res)
     return res.json()})
-  .then(json=>{
-    setProduct(json)})
 
+  .then(json=>{
+
+  if (categoryId) {
+     const productosfiltrados = json.filter(json=>json.category === categoryId)
+    console.log(productosfiltrados)
+
+    setProduct(productosfiltrados)
+  } else {
+    setProduct(json)
+  }
+  })
   .catch((err) =>
     alert (err.message))
 
-}, [])
+}, [categoryId])
 
-console.log(Product) //se logea el stado no el array inicia en []
+// console.log(Product) //se logea el stado no el array inicia en []
  
   return (
-    // <div className='ItemCard'>
-    //   <Item title={"Samurai 1"} title2={"ok"}/>
-    //   <Item title={"Samurai 2"}/>
-    //   <Item title={"Samurai 3"}/>
-    //   <Item title={"Samurai 4"}/>
-    //  <button onClick={sumarContador}>+</button>
-    //  <span>{count}</span>
-    //  <button onClick={restarContador}>-</button>
-    // </div>
 
-    <div>
-      <ItemList Productos={Product}/></div> //array y estado 
+    <div className='container-fluid'>
+        
+           <ItemList  Productos={Product}/>
+        </div>
+    
+      
   )
 }
 

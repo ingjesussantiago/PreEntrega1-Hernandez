@@ -1,6 +1,6 @@
 import React, {useEffect, useState } from 'react'
 import ItemDetail from '../../Components/itemDetail'
-import "./styles.scss"
+// import "./styles.scss"
 
 const ItemDetailContainer = () => {
 
