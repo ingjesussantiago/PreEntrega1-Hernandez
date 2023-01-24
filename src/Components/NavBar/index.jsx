@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import CartWiddet from '../CartWiddet'
 
-
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
@@ -14,11 +13,18 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link to="/category/electronics" className="nav-link active" aria-current="page" >electronics</Link>
+              <Link to="/category/electronics" className="nav-link active" aria-current="page" >Electronica</Link>
             </li>
             <li className="nav-item">
-              <Link to={"/category/jewelery"} className="nav-link" >jewelery</Link>
+              <Link to={"/category/jewelery"} className="nav-link" >Joyeria</Link>
             </li>
+            <li className="nav-item">
+              <Link to={"/category/men's clothing"} className="nav-link" >Ropa para Hombre</Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/category/women's clothing"} className="nav-link" >Ropa para Dama</Link>
+            </li>
+
             {/* <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown
