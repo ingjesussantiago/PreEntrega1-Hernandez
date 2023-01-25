@@ -1,23 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Ad from '../../Components/Ad'
 import ItemList from '../../Components/itemList'
 import "./styles.scss"
 
 const ItemListContainer = () => {
 
-// const [count, setCount]= useState (1)
-//   const sumarContador = () =>{
-//   setCount(count +1)
-//  }
- 
-//  const restarContador= ( ) =>{
-//   setCount(count-1)
-//  }
- 
-const [Product, setProduct] = useState([])
+ const [Product, setProduct] = useState([])
 
 const {categoryId} = useParams()
-console.log(categoryId)
+// console.log(categoryId)
 
 
 useEffect(() => {
@@ -31,7 +23,7 @@ useEffect(() => {
 
   if (categoryId) {
      const productosfiltrados = json.filter(json=>json.category === categoryId)
-    console.log(productosfiltrados)
+    // console.log(productosfiltrados)
 
     setProduct(productosfiltrados)
   } else {
@@ -50,6 +42,15 @@ useEffect(() => {
     <div className='container-fluid'>
         
            <ItemList  Productos={Product}/>
+           <Ad>
+            <h3>quieres verder? anunciate aqui</h3>
+            <button 
+            style={{
+              width:100,
+              padding: 8,
+              border: "2px solid black"            
+              }}>cerrar</button>
+           </Ad>
         </div>
     
       

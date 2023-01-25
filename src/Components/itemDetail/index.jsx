@@ -1,5 +1,6 @@
 import React from 'react'
-import { useState } from 'react'
+import {useState} from "react";
+
 
 const ItemDetail = ({DetailProduct}) => {
 
@@ -23,9 +24,11 @@ console.log(DetailProduct)
          <div ClassName="card-body">
           <h5 ClassName="card-title">{DetailProduct.title}</h5>
           <p ClassName="card-text">{DetailProduct.price}</p>
-          <button onClick={sumarContador}>+</button>
+          <button Class="btn btn-primary " onClick={sumarContador}>+</button>
           <span>{count}</span>
-          <button onClick={restarContador}>-</button>
+          <button Class="btn btn-primary" onClick={restarContador}>-</button>
+          <button Class="btn btn-primary">Confirmar compra</button>
+
         </div>
      </div>
    

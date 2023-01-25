@@ -14,7 +14,7 @@ useEffect(() => {
 
   fetch (`https://fakestoreapi.com/products/${id}`)
   .then(res=>{
-    console.log(res)
+    // console.log(res)
     return res.json()})
   .then(json=>{
     setDetailProduct(json)})
@@ -24,12 +24,18 @@ useEffect(() => {
 
 },[id])
 
-console.log(DetailProduct) //se logea el stado no el array inicia en []
+// console.log(DetailProduct) //se logea el stado no el array inicia en []
  
   return (
 
     <div>
-      <ItemDetail DetailProduct={DetailProduct}/></div> //array y estado 
+      {
+        Object.keys(DetailProduct).length === 0
+        ? <h1>Loading....page</h1>
+        :<ItemDetail DetailProduct={DetailProduct}/>
+      }
+      
+      </div> //array y estado 
   )
 }
 

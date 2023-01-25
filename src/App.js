@@ -3,22 +3,27 @@ import './App.css';
 import NavBar from "./Components/NavBar";
 import ItemListContainer from './container/ItemListContainer';
 import ItemDetailContainer  from './container/ItemDetailContainer';
+import ShopProvider from './context/ShopProvider';
 
 
 
 
 function App() {
   return (
-
-      <BrowserRouter>
+<ShopProvider>
+        <BrowserRouter>
         <NavBar/>
-     <Routes>
+      <Routes>
       <Route path='/' element={<ItemListContainer/>}/>
       <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
       <Route path='/Detail/:id' element={<ItemDetailContainer/>}/>
       <Route path='*' element={<h2>no hay pagina</h2>}/>
      </Routes>  
   </BrowserRouter>
+
+</ShopProvider>
+
+  
      
 
   );
