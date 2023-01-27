@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Ad from '../../Components/Ad'
+// import Ad from '../../Components/Ad'
 import ItemList from '../../Components/itemList'
 import "./styles.scss"
 
@@ -42,7 +42,7 @@ useEffect(() => {
     <div className='container-fluid'>
         
            <ItemList  Productos={Product}/>
-           <Ad>
+           {/* <Ad>
             <h3>quieres verder? anunciate aqui</h3>
             <button 
             style={{
@@ -50,7 +50,7 @@ useEffect(() => {
               padding: 8,
               border: "2px solid black"            
               }}>cerrar</button>
-           </Ad>
+           </Ad> */}
         </div>
     
       

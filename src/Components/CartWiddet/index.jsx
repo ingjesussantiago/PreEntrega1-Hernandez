@@ -5,10 +5,15 @@ import { Shop } from "../../context/ShopProvider";
 
 const CartWiddet = () => {
 
-const value = useContext(Shop)
+const {sumarCantidad}= useContext(Shop)
+// console.log(Product)
 
   return (
-    <BsCart3  style={{height:30, width:30}}/>
+    <>
+      <BsCart3  style={{height:30, width:30}}/>
+      <span>{sumarCantidad ()}</span>
+    </>
+  
   )
 }
 

@@ -1,18 +1,20 @@
 import React from 'react'
 import ItemCount from "../Itemcount";
-import { useState } from "react";
+import { useState, useContext} from "react";
 import { Link } from 'react-router-dom';
+import { Shop } from "../../context/ShopProvider";
 
 
 const ItemDetail = ({DetailProduct}) => {
 
 const [CarritoCount, setCarritoCount] = useState(0)
 
-
+const {addProduct} = useContext(Shop)
 
 const onAdd=(count)=> {
   console.log(`sea grego:${count}`)
   setCarritoCount(count)
+  addProduct({...DetailProduct, quantity:count})
 }
 
 

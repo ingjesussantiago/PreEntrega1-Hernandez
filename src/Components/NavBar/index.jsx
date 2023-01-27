@@ -49,7 +49,7 @@ const NavBar = () => {
           </form>
           <div>
               <CartWiddet/>
-              <span>3</span>
+            
           </div>
             
             </div>

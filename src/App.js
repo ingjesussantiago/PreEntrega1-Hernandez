@@ -12,15 +12,15 @@ import Cart from './container/CartContainer';
 function App() {
   return (
 <ShopProvider>
-        <BrowserRouter>
-        <NavBar/>
-      <Routes>
-      <Route path='/' element={<ItemListContainer/>}/>
-      <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
-      <Route path='/Detail/:id' element={<ItemDetailContainer/>}/>
-      <Route path='/cart' element={<Cart/>}/>
-      <Route path='*' element={<h2>no hay pagina</h2>}/>
-     </Routes>  
+  <BrowserRouter>
+      <NavBar/>
+        <Routes>
+        <Route path='/' element={<ItemListContainer/>}/>
+        <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
+        <Route path='/Detail/:id' element={<ItemDetailContainer/>}/>
+        <Route path='/cart' element={<Cart/>}/>
+        <Route path='*' element={<h2>no hay pagina</h2>}/>
+      </Routes>  
   </BrowserRouter>
 
 </ShopProvider>
