@@ -1,9 +1,9 @@
-import React from 'react'
+import React,{Children} from 'react'
 
 const Ad = ({Children}) => {
   return (
-    <div className="ad-container">
-        <div className='ad'>
+    <div class='ad-containe'>
+        <div class='ad'>
             {Children}
         </div>
     </div>
