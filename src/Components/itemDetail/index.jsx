@@ -1,6 +1,7 @@
 import React from 'react'
 import ItemCount from "../Itemcount";
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 
 const ItemDetail = ({DetailProduct}) => {
@@ -33,7 +34,9 @@ console.log(DetailProduct)
            inicial={1}
            onAdd={onAdd}
            />
-           :<button class="btn btn-primary"> Ir a Compra</button>
+           :<button class="btn btn-primary">
+            <Link to="/cart">ir a compras</Link>
+           </button>
            
            }
          

@@ -4,6 +4,7 @@ import NavBar from "./Components/NavBar";
 import ItemListContainer from './container/ItemListContainer';
 import ItemDetailContainer  from './container/ItemDetailContainer';
 import ShopProvider from './context/ShopProvider';
+import Cart from './container/CartContainer';
 
 
 
@@ -17,6 +18,7 @@ function App() {
       <Route path='/' element={<ItemListContainer/>}/>
       <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
       <Route path='/Detail/:id' element={<ItemDetailContainer/>}/>
+      <Route path='/cart' element={<Cart/>}/>
       <Route path='*' element={<h2>no hay pagina</h2>}/>
      </Routes>  
   </BrowserRouter>
