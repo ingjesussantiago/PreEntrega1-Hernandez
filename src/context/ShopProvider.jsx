@@ -10,8 +10,21 @@ const ShopProvider = ({children}) => {
 const [Products, setProducts] = useState ([])
 
 const addProduct = (Product) =>{
+  const isInCart = isProductInCart(Product.id)
+  
+  if (isInCart) {
+    const productoRepetido = Products.find(element => element.id === Product.id )
+    productoRepetido.quantity += Product.quantity
+    setProducts([...Products])
+  } else {
   setProducts([...Products, Product])
+  }
 }
+
+const isProductInCart = (id) =>{
+  return Products.some(product =>product.id===id)
+}
+
 
 const sumarCantidad =() => {
 let cantidadTotal =0;
