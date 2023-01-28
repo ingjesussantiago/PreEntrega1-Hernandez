@@ -23,27 +23,32 @@ console.log(DetailProduct)
 
   return (
 
+    <div Class="container-fluid row align-items-center text-center">
+      <img src={DetailProduct.image} Class="m-4" alt={`id-${DetailProduct.id}`}style={{width: "20rem"}}/>
+      <aside Class="detail-aside col-6">
+        <h5 class="text-center">{DetailProduct.title}</h5>
+        <p class="text-center">{`$${DetailProduct.price}`}</p>
 
-    <div ClassName="card" style={{width: "18rem"}}>
-      <img src={DetailProduct.image} ClassName="card-img-top" alt={`id-${DetailProduct.id}`}/>
-         <div ClassName="card-body">
-          <h5 ClassName="card-title">{DetailProduct.title}</h5>
-          <p ClassName="card-text">{DetailProduct.price}</p>
-          {
+           {
            CarritoCount === 0
            ?<ItemCount 
           stock={20}
            inicial={1}
            onAdd={onAdd}
            />
-           :<button class="btn btn-primary">
-            <Link to="/cart">ir a compras</Link>
+           :<button class="btn btn-primary ">
+            <Link to="/cart" class="text-bg-primary">Carrito de Compra</Link>
            </button>
            
            }
-         
 
-        </div>
+      
+  
+       
+
+
+      </aside>
+        
      </div>
    
   )
