@@ -31,14 +31,29 @@ let cantidadTotal =0;
 for(const product of Products){
   cantidadTotal += product.quantity
 }
-return cantidadTotal
+return cantidadTotal;
   
 }
+
+const total =() => {
+  let total =0;
+  for(const product of Products){
+    total += product.price * product.quantity
+  }
+  return total;
+    
+  }
+
+const cleanCart = ()=>{
+  setProducts([])
+}
+
+
 
 
   return (
   
-    <Shop.Provider value={{Products, addProduct, sumarCantidad}}>
+    <Shop.Provider value={{Products, addProduct, sumarCantidad, total ,cleanCart}}>
     {children}
     </Shop.Provider>
 
