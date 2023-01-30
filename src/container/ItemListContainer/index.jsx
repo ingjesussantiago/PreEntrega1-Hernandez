@@ -5,16 +5,17 @@ import ItemList from '../../Components/itemList'
 import "./styles.scss"
 import { db } from '../../firebase/config'
 import { collection, getDocs, query, where } from "firebase/firestore"; 
-
+// import saveFormJSONToFirebase from '../../services/saveFormJSONToFirebase'
 const ItemListContainer = () => {
 
  const [Product, setProduct] = useState([])
-
 //  console.log(db);
 
 const {categoryId} = useParams()
 // console.log(categoryId)
-
+// useEffect(() => {
+//   saveFormJSONToFirebase()
+ // }, [])
 
 useEffect(() => {
 
@@ -39,11 +40,6 @@ setProduct(productosFirebase)
 }
 
 getproducts();
-
-
-
-
-
 
 
   // fetch('https://fakestoreapi.com/products')
@@ -84,8 +80,7 @@ getproducts();
               }}>cerrar</button>
            </Ad> */}
         </div>
-    
-      
+  
   )
 }
 

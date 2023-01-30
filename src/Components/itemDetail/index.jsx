@@ -32,7 +32,7 @@ console.log(DetailProduct)
            {
            CarritoCount === 0
            ?<ItemCount 
-          stock={20}
+          stock={DetailProduct.stock}
            inicial={1}
            onAdd={onAdd}
            />
