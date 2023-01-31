@@ -5,28 +5,30 @@ import { Shop } from '../../context/ShopProvider';
 import generaOrdenObjeto from "../../services/generaOrdenObjeto";
 import { collection, addDoc } from "firebase/firestore"; 
 import { db } from "../../firebase/config";
-import { doc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore"; 
+import FormComp from '../../Components/Form';
+import { Link } from 'react-router-dom'
 
 
 const Cart = () => {
 
   const {Products, total, cleanCart} = useContext(Shop);
   // console.log(Products)
-  // const [FormVis,setFormVis]= useState(false);
+  const [formVis,setFormVis]= useState(false);
 
   const [Loader, setLoader] = useState(false);
 
-  const confirmaCompra = async () => { 
-
+  const confirmaCompra = async (dataDelFormulario) => { 
+const{nombre,email,Telefono}=dataDelFormulario
 try {
   
     setLoader(true);
     const order = generaOrdenObjeto({
-      nombre: "jesus",
-      email:"ingjesussantiago@gmail.com",
-      telefono:"9212050690",
+      nombre,
+      email,
+      Telefono,
       cart: Products,
-      total: total(),
+      total: total()
     })
 
     // setFormVis(true);
@@ -52,11 +54,14 @@ alert("orden confirmada con ID: " + docRef.id);
   console.log(error);
 }finally{
   setLoader(false);
+  setFormVis(false);
+}
 }
 
-   }
-
   return (
+    <>
+    {
+    Products.lenght !== 0?
     <>
     <table class="table table-success table-striped">
       <thead>
@@ -72,28 +77,37 @@ alert("orden confirmada con ID: " + docRef.id);
       <tbody>
         {Products.map(product => {
           return<TableRow key={product.id} product={product}/>
-        })
-
-        }
-
-
+        })}
       </tbody>
-      
     </table>
     {
-      Loader ? <h2>Cargando...</h2>
-      :<button onClick={confirmaCompra}>Confirmar Compra</button>
+      Loader ? 
+      <h2>Cargando...</h2>
+      :
+      <button onClick={() => setFormVis(true)}>Confirmar Compra</button>
     }
-    
-    {/* { FormVis ?
-    <form>
-      <input placeholder='ingrese name' />
-    </form>
-    :null} */}
-    
-    
-    </>
+  </>
+  :
+  <>
+    <h1>no hay productos en su carrito </h1>
+    <button>
+      <Link to = "/">home</Link>
+    </button>
+  </>
+}
+{
+  formVis ?
+  <FormComp
+confirmaCompra={confirmaCompra}
+formVis={formVis}
+setFormVis={setFormVis}
+  />
+  :null
+
+}
+</>
   )
 }
+  
 
 export default Cart
