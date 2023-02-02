@@ -48,11 +48,11 @@ const handleClose =() =>{
       )}
       {errors?.email?.type === "required" && <p>El campo email es requerido</p>}
       <label>Telefono</label>
-      <input type="number"{...register("Telefono", { minLength:10, maxLength:10, required: true})} />
-      {errors?.Telefono?.type === "minLength" && (
+      <input type="tel"{...register("telefono", { minLength:10, maxLength:10, required: true})} />
+      {errors?.telefono?.type === "minLength" && (
         <p>EL numero Telefonico debe tener 10 Digitos</p>
       )}
-      {errors?.Telefono?.type === "required" && <p>Colocar su numero a 10 Digitos</p>}
+      {errors?.telefono?.type === "required" && <p>Colocar su numero a 10 Digitos</p>}
      
 
       </Modal.Body>

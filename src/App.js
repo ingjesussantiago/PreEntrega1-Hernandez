@@ -20,7 +20,7 @@ function App() {
         <Route path='/Detail/:id' element={<ItemDetailContainer/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='*' element={<h2>no hay pagina</h2>}/>
-      </Routes>  
+      </Routes> 
   </BrowserRouter>
 
 </ShopProvider>

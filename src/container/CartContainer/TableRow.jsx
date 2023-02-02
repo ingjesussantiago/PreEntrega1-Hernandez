@@ -2,14 +2,17 @@ import React from 'react'
 
 const TableRow = ({product}) => {
   return (
-   <tr>
+    <>
+    <tr>
     <th scope='row'>{product.id}</th>
-    <td><img src={product.image} alt="table- row" style={{width: "12rem"}}></img></td>
+    <td><img src={product.image} alt="table- row" style={{width: "9rem"}}></img></td>
     <td>{product.title}</td>
     <td>{product.price}</td>
     <td>{product.quantity}</td>
     <td><button>Remove</button></td>
    </tr>
+    </>
+  
   )
 }
 

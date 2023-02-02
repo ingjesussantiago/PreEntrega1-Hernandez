@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import "./styles.scss"
+import "./styles.scss"
 
 const Item = ({Product}) => {
   return (
-        <div Class="card" style={{width: "17rem"}}>
+        <div class="card" style={{width: "17rem"}}>
             <img src={Product.image} Class="card-img-top" alt={`id-${Product.id}`} height="55%"/>
             <div Class="card-body row justify-content-center">
               <h5 Class="card-title text-center">{Product.title}</h5>

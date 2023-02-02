@@ -9,7 +9,6 @@ import { doc, updateDoc } from "firebase/firestore";
 import FormComp from '../../Components/Form';
 import { Link } from 'react-router-dom'
 
-
 const Cart = () => {
 
   const {Products, total, cleanCart} = useContext(Shop);
@@ -19,21 +18,21 @@ const Cart = () => {
   const [Loader, setLoader] = useState(false);
 
   const confirmaCompra = async (dataDelFormulario) => { 
-const{nombre,email,Telefono}=dataDelFormulario
-try {
-  
-    setLoader(true);
-    const order = generaOrdenObjeto({
-      nombre,
-      email,
-      Telefono,
-      cart: Products,
-      total: total()
-    })
+    const{nombre,email,telefono}=dataDelFormulario
+    
+      try {
+      setLoader(true);
+      const order = generaOrdenObjeto({
+        nombre,
+        email,
+        telefono,
+        cart: Products,
+        total: total()
+      })
 
     // setFormVis(true);
 
-console.log(order);
+// console.log(order);
 
 // Add a new document with a generated id.
 const docRef = await addDoc(collection(db, "orders"), order);
@@ -61,7 +60,7 @@ alert("orden confirmada con ID: " + docRef.id);
   return (
     <>
     {
-    Products.lenght !== 0?
+    Products.lenght !== 0 ?
     <>
     <table class="table table-success table-striped">
       <thead>
@@ -86,13 +85,16 @@ alert("orden confirmada con ID: " + docRef.id);
       :
       <button onClick={() => setFormVis(true)}>Confirmar Compra</button>
     }
-  </>
-  :
-  <>
+    </>
+    :
+    <>
     <h1>no hay productos en su carrito </h1>
-    <button>
-      <Link to = "/">home</Link>
+
+
+    <button class="btn btn-primary ">
+    <Link to="/" class="text-bg-primary">home</Link>
     </button>
+    
   </>
 }
 {
