@@ -21,6 +21,8 @@ const addProduct = (Product) =>{
   }
 }
 
+
+
 const isProductInCart = (id) =>{
   return Products.some(product =>product.id===id)
 }
@@ -51,9 +53,11 @@ const cleanCart = ()=>{
 
 
 
+
+
   return (
   
-    <Shop.Provider value={{Products, addProduct, sumarCantidad, total ,cleanCart}}>
+    <Shop.Provider value={{Products, addProduct, sumarCantidad, total ,cleanCart,setProducts }}>
     {children}
     </Shop.Provider>
 

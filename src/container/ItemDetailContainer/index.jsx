@@ -5,7 +5,6 @@ import ItemDetail from '../../Components/itemDetail'
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '../../firebase/config';
 
-
 const ItemDetailContainer = () => {
 
  const [DetailProduct, setDetailProduct] = useState({})
@@ -34,14 +33,6 @@ const getProduct = async ()=>{
 getProduct();
 
 
-
- 
-
-
-
-
-
-
   // fetch (`https://fakestoreapi.com/products/${id}`)
   // .then(res=>{
   //   // console.log(res)
@@ -57,15 +48,14 @@ getProduct();
 // console.log(DetailProduct) //se logea el stado no el array inicia en []
  
   return (
-
     <div>
       {
         Object.keys(DetailProduct).length === 0
-        ? <h1>Loading....page</h1>
+        ? <h2>Loading....page</h2>
         :<ItemDetail DetailProduct={DetailProduct}/>
       }
       
-      </div> //array y estado 
+      </div>
   )
 }
 

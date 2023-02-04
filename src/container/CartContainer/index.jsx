@@ -12,13 +12,14 @@ import { Link } from 'react-router-dom'
 const Cart = () => {
 
   const {Products, total, cleanCart} = useContext(Shop);
-  // console.log(Products)
+  console.log("me encontaste",Products)
   const [formVis,setFormVis]= useState(false);
 
   const [Loader, setLoader] = useState(false);
 
   const confirmaCompra = async (dataDelFormulario) => { 
     const{nombre,email,telefono}=dataDelFormulario
+
     
       try {
       setLoader(true);
@@ -62,8 +63,8 @@ alert("orden confirmada con ID: " + docRef.id);
     {
     Products.lenght !== 0 ?
     <>
-    <table class="table table-success table-striped">
-      <thead>
+    <table class="table table-success table-striped ">
+      <thead class="text-center">
         <tr>
          <th scope='col' class="text-center">Id</th>
          <th scope='col'>Imagen</th> 
@@ -73,12 +74,13 @@ alert("orden confirmada con ID: " + docRef.id);
          <th scope='col'>Remover</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="text-center">
         {Products.map(product => {
           return<TableRow key={product.id} product={product}/>
         })}
       </tbody>
     </table>
+
     {
       Loader ? 
       <h2>Cargando...</h2>
@@ -90,11 +92,10 @@ alert("orden confirmada con ID: " + docRef.id);
     <>
     <h1>no hay productos en su carrito </h1>
 
-
     <button class="btn btn-primary ">
     <Link to="/" class="text-bg-primary">home</Link>
     </button>
-    
+       
   </>
 }
 {

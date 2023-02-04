@@ -37,6 +37,7 @@ let querySnapshot;
   productosFirebase.push(product)
 });
 setProduct(productosFirebase)
+
 }
 
 getproducts();

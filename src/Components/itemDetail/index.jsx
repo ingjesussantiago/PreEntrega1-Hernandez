@@ -19,7 +19,7 @@ const onAdd=(count)=> {
 
 
 
-console.log(DetailProduct)
+// console.log(DetailProduct)
 
   return (
 
