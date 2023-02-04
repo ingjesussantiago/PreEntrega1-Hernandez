@@ -17,16 +17,19 @@ if (count>inicial) {
    }
 
   return (
-    <div class="container-fluid text-center row">
-      <div class="container-fluid ">
-         <button Class="btn btn-primary m-1 " onClick={sumarContador}>+</button>
+   <>
+    <div className="container-fluid text-center row">
+      <div className="container-fluid ">
+         <button className="btn btn-primary m-1 " onClick={sumarContador}>+</button>
             <span>{count}</span>
-         <button Class="btn btn-primary m-1 " onClick={restarContador}>-</button> 
-         <button Class="btn btn-primary m-2" onClick={()=>onAdd(count)}>Confirmar compra</button>
+         <button className="btn btn-primary m-1 " onClick={restarContador}>-</button> 
+         <button className="btn btn-primary m-2" onClick={()=>onAdd(count)}>Confirmar compra</button>
       </div>
    
       
     </div>
+   
+   </>
    
   )
 }

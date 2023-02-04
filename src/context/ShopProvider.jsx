@@ -50,11 +50,6 @@ const cleanCart = ()=>{
   setProducts([])
 }
 
-
-
-
-
-
   return (
   
     <Shop.Provider value={{Products, addProduct, sumarCantidad, total ,cleanCart,setProducts }}>

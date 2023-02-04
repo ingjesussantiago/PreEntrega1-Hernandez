@@ -5,17 +5,17 @@ import { Shop } from '../../context/ShopProvider';
 
 const TableRow = ({product}) => {
   
-const {Products} = useContext(Shop);
+const {Products } = useContext(Shop);
    
 const [borraproduct, setborraproduct] = useState(true)
 
 
-const removerProduct = (DetailProduct,count,setCarritoCount) =>{
-  // console.log(nuevo)
-  const nuevo = Products.filter(p=>p.id !== product.id)
-  
-  setborraproduct(false)
+const removerProduct = (product) =>{
 
+  Products.filter(p=>p.id !== product.id)
+  
+  
+  setborraproduct()
 
  
   }
@@ -31,11 +31,10 @@ return (
     <td>{product.title}</td>
     <td>{product.price}</td>
     <td>{product.quantity}</td>
-    <td><button onClick={removerProduct}>Remove a</button></td>
+    <td><button className="btn btn-primary "onClick={removerProduct}>Remover</button></td>
    </tr>
 : 
 null
-// console.log("estados")
 
     }
     </>
@@ -44,28 +43,3 @@ null
   }
 
 export default TableRow
-
-
-
-
-
-
-
-
-
-// const isInCart = isProductInCart(product.id)
-
-// if (isInCart) {
-//   console.log("no")
-//       // setProducts([...Products])
-//       } else {
-//       const productofiltrado = Products.filter(element => element.id !== product.id )
-//  console.log("aqui esta el detalle", productofiltrado)
-    
-//     // setProducts([...Products, product])
-//     }
-  
-  
-//   const isProductInCart = (id) =>{
-//     return Products.some(product =>product.id===id)
-//   }

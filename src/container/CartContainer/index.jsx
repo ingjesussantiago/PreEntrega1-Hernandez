@@ -12,15 +12,12 @@ import { Link } from 'react-router-dom'
 const Cart = () => {
 
   const {Products, total, cleanCart} = useContext(Shop);
-  console.log("me encontaste",Products)
   const [formVis,setFormVis]= useState(false);
-
   const [Loader, setLoader] = useState(false);
 
   const confirmaCompra = async (dataDelFormulario) => { 
     const{nombre,email,telefono}=dataDelFormulario
 
-    
       try {
       setLoader(true);
       const order = generaOrdenObjeto({
@@ -31,19 +28,13 @@ const Cart = () => {
         total: total()
       })
 
-    // setFormVis(true);
 
-// console.log(order);
-
-// Add a new document with a generated id.
 const docRef = await addDoc(collection(db, "orders"), order);
 cleanCart ()
 
 for ( const productCart of Products) {
 
   const productRef = doc(db, "products", productCart.id);
-  
-  // Set the "capital" field of the city 'DC'
   await updateDoc(productRef, {
     stock: productCart.stock - productCart.quantity
   });
@@ -63,10 +54,10 @@ alert("orden confirmada con ID: " + docRef.id);
     {
     Products.lenght !== 0 ?
     <>
-    <table class="table table-success table-striped ">
-      <thead class="text-center">
+    <table className="table table-success table-striped ">
+      <thead className="text-center">
         <tr>
-         <th scope='col' class="text-center">Id</th>
+         <th scope='col'>Id</th>
          <th scope='col'>Imagen</th> 
          <th scope='col'>Descripción</th> 
          <th scope='col'>Precio</th>
@@ -74,7 +65,7 @@ alert("orden confirmada con ID: " + docRef.id);
          <th scope='col'>Remover</th>
         </tr>
       </thead>
-      <tbody class="text-center">
+      <tbody className="text-center">
         {Products.map(product => {
           return<TableRow key={product.id} product={product}/>
         })}
@@ -85,15 +76,15 @@ alert("orden confirmada con ID: " + docRef.id);
       Loader ? 
       <h2>Cargando...</h2>
       :
-      <button onClick={() => setFormVis(true)}>Confirmar Compra</button>
+      <button className="btn btn-primary "onClick={() => setFormVis(true)}>Confirmar Compra</button>
     }
     </>
     :
     <>
     <h1>no hay productos en su carrito </h1>
 
-    <button class="btn btn-primary ">
-    <Link to="/" class="text-bg-primary">home</Link>
+    <button className="btn btn-primary ">
+    <Link to="/" className="text-bg-primary">home</Link>
     </button>
        
   </>

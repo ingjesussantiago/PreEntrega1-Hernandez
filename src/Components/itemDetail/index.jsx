@@ -12,22 +12,17 @@ const [CarritoCount, setCarritoCount] = useState(0)
 const {addProduct} = useContext(Shop)
 
 const onAdd=(count)=> {
-  console.log(`sea grego:${count}`)
   setCarritoCount(count)
   addProduct({...DetailProduct, quantity:count})
 }
 
-
-
-// console.log(DetailProduct)
-
   return (
 
-    <div Class="container-fluid row align-items-center text-center">
-      <img src={DetailProduct.image} Class="m-4" alt={`id-${DetailProduct.id}`}style={{width: "20rem"}}/>
-      <aside Class="detail-aside col-6">
-        <h5 class="text-center">{DetailProduct.title}</h5>
-        <p class="text-center">{`$${DetailProduct.price}`}</p>
+    <div className="container-fluid row align-items-center text-center">
+      <img src={DetailProduct.image} alt={`id-${DetailProduct.id}`}style={{width: "20rem"}}/>
+      <aside className="detail-aside col-6">
+        <h5 className="text-center">{DetailProduct.title}</h5>
+        <p className="text-center">{`$${DetailProduct.price}`}</p>
 
            {
            CarritoCount === 0
@@ -36,17 +31,11 @@ const onAdd=(count)=> {
            inicial={1}
            onAdd={onAdd}
            />
-           :<button class="btn btn-primary ">
-            <Link to="/cart" class="text-bg-primary">Carrito de Compra</Link>
+           :<button className="btn btn-primary ">
+            <Link to="/cart" className="text-bg-primary">Carrito de Compra</Link>
            </button>
            
            }
-
-      
-  
-       
-
-
       </aside>
         
      </div>

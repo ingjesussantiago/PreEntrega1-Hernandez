@@ -12,7 +12,7 @@ const FormComp = ({confirmaCompra, formVis ,setFormVis }) => {
 
   const onSubmit = (dataDelFormulario) => {
     confirmaCompra(dataDelFormulario)
-  }; // your form submit function which will invoke after successful validation
+  };
 
 const handleClose =() =>{
   setFormVis(false);

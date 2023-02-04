@@ -1,21 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-// import Ad from '../../Components/Ad'
 import ItemList from '../../Components/itemList'
-import "./styles.scss"
 import { db } from '../../firebase/config'
 import { collection, getDocs, query, where } from "firebase/firestore"; 
-// import saveFormJSONToFirebase from '../../services/saveFormJSONToFirebase'
+// import Ad from '../../Components/Ad';
+
 const ItemListContainer = () => {
 
- const [Product, setProduct] = useState([])
-//  console.log(db);
-
+const [Product, setProduct] = useState([])
 const {categoryId} = useParams()
-// console.log(categoryId)
-// useEffect(() => {
-//   saveFormJSONToFirebase()
- // }, [])
 
 useEffect(() => {
 
@@ -42,30 +35,8 @@ setProduct(productosFirebase)
 
 getproducts();
 
-
-  // fetch('https://fakestoreapi.com/products')
-  // .then(res=>{
-  //   // console.log(res)
-  //   return res.json()})
-
-  // .then(json=>{
-
-  // if (categoryId) {
-  //    const productosfiltrados = json.filter(json=>json.category === categoryId)
-  //   // console.log(productosfiltrados)
-
-  //   setProduct(productosfiltrados)
-  // } else {
-  //   setProduct(json)
-  // }
-  // })
-  // .catch((err) =>
-  //   alert (err.message))
-
 }, [categoryId])
 
-// console.log(Product) //se logea el stado no el array inicia en []
- 
   return (
 
     <div className='container-fluid'>

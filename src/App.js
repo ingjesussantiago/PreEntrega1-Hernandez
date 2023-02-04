@@ -7,8 +7,6 @@ import ShopProvider from './context/ShopProvider';
 import Cart from './container/CartContainer';
 
 
-
-
 function App() {
   return (
 <ShopProvider>
