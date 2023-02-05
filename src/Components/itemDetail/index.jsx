@@ -16,6 +16,7 @@ const onAdd=(count)=> {
   addProduct({...DetailProduct, quantity:count})
 }
 
+
   return (
 
     <div className="container-fluid row align-items-center text-center">

@@ -52,7 +52,8 @@ alert("orden confirmada con ID: " + docRef.id);
   return (
     <>
     {
-    Products.lenght !== 0 ?
+    Products.lenght !== 0
+     ?
     <>
     <table className="table table-success table-striped ">
       <thead className="text-center">
@@ -62,8 +63,7 @@ alert("orden confirmada con ID: " + docRef.id);
          <th scope='col'>Descripción</th> 
          <th scope='col'>Precio</th>
          <th scope='col'>Cantidad</th>
-         <th scope='col'>Remover</th>
-        </tr>
+         </tr>
       </thead>
       <tbody className="text-center">
         {Products.map(product => {

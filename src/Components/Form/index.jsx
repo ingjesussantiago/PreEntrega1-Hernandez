@@ -24,19 +24,15 @@ const handleClose =() =>{
    
     <Modal show={formVis} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Checkout</Modal.Title>
+        <Modal.Title>Datos de Cliente</Modal.Title>
       </Modal.Header>
       <form onSubmit={handleSubmit(onSubmit)}>
       <Modal.Body>
-      
+      <div className='container d-flex row'>
+
       <label>Nombre</label>
-      <input
-        {...register("nombre", {
-          required: true,
-          minLength: 2,
-         })}
-      />
-      {errors?.nombre?.type === "required" && <p>El campo es requerido</p>}
+      <input type="name"{...register("nombre", {required: true,minLength: 2,})}/>
+      {errors?.nombre?.type === "required" && <p>Requiere su Nombre</p>}
       {errors?.nombre?.type === "minLength" && (
         <p>El nombre debe superar los 2 caracteres</p>
       )}
@@ -46,14 +42,15 @@ const handleClose =() =>{
       {errors?.email?.type === "minLength" && (
         <p>El mail debe tener minimo 3 caracteres</p>
       )}
-      {errors?.email?.type === "required" && <p>El campo email es requerido</p>}
+      {errors?.email?.type === "required" && <p>Escriba su correo electronico</p>}
       <label>Telefono</label>
       <input type="tel"{...register("telefono", { minLength:10, maxLength:10, required: true})} />
       {errors?.telefono?.type === "minLength" && (
         <p>EL numero Telefonico debe tener 10 Digitos</p>
       )}
-      {errors?.telefono?.type === "required" && <p>Colocar su numero a 10 Digitos</p>}
+      {errors?.telefono?.type === "required" && <p>Colocar su numero de Telefono 10 Digitos</p>}
      
+      </div>
 
       </Modal.Body>
       <Modal.Footer>
